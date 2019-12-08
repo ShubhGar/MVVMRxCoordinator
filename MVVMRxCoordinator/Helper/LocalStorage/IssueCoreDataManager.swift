@@ -10,11 +10,12 @@ import Foundation
 
 
 class IssueCoreDataManager{
-    
+    static let CDIssueEntity = String(describing:CDIssue.self)
     
     class func save(issues:IssueViewModels){
+        CoreDataStack.clearAllData(entityName: CDIssueEntity)
         for issue in issues{
-            let cdIssue:CDIssue = CoreDataStack.getObjectFor(entityName: String(describing:CDIssue.self)) as! CDIssue
+            let cdIssue:CDIssue = CoreDataStack.getObjectFor(entityName: CDIssueEntity) as! CDIssue
             cdIssue.body = issue.body
             cdIssue.comments = issue.commentURL
             cdIssue.commentsCount = Int16(issue.commentsCount)
@@ -26,7 +27,7 @@ class IssueCoreDataManager{
     }
     
     class func getIssue()->[CDIssue]{
-        return CoreDataStack.loadData(entityName: String(describing:CDIssue.self), predicate: nil)
+        return CoreDataStack.loadData(entityName: CDIssueEntity, predicate: nil)
     }
     
     

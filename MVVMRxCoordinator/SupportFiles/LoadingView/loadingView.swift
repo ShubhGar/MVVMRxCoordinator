@@ -8,7 +8,7 @@
 
 import UIKit
 
-class loadingView: UIView {
+class LoadingView: UIView {
     
     
     @IBOutlet weak var messageLabel: UILabel!

@@ -8,6 +8,7 @@ A sample app to experiment with:
 - TableView
 - Loding Animation
 - Error Message View
+- Dark Mode Support
 
 
 This project use  GitHub web API to retrieve all open issues associated with the firebase-ios-sdk repository and display a list of issues to the user - the UI should be something like:
